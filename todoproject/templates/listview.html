@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="banner">
+            <div class="banner-text"><h1>Todo List</h1></div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" class="p-3 shadow">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="task" placeholder="Task">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="priority" placeholder="priority">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="date" placeholder="date">
+                </div>
+                <input type="submit" class="btn btn-success">
+
+            </form>
+        </div>
+        {% endblock %}
